@@ -1,30 +1,27 @@
 <table id="table">
   <tr>
-    <td><img src="red.png" class="comCard" alt=""></td>
-    <td><img src="red.png" class="comCard" alt=""></td>
-    <td><img src="red.png" class="comCard" alt=""></td>
-    <td><img src="red.png" class="comCard" alt=""></td>
-    <td><img src="red.png" class="comCard" alt=""></td>
+    <td><%= image_tag "red.png", class:"comCard" %></td>
+    <td><%= image_tag "red.png", class:"comCard" %></td>
+    <td><%= image_tag "red.png", class:"comCard" %></td>
+    <td><%= image_tag "red.png", class:"comCard" %></td>
+    <td><%= image_tag "red.png", class:"comCard" %></td>
   </tr>
   <tr>
     <td></td>
-    <td><button id="pick">カードを引く</button><br><button id="judge">勝負する！</button></td>
+    <td><%= button_tag "カードを引く", id:"pick" %><br><%= button_tag "勝負する！", id:"judge" %></td>
     <td>
-      <img id="cards" src="blue.png" alt="">
+      <%= image_tag "blue.png", id:"cards", alt:"" %>
       <div id="myTotal" class="total"></div>
       <div id="comTotal" class="total"></div>
     </td>
-    <td><button id="reset">もう一回遊ぶ</button></td>
+    <td><%= button_tag "もう一回遊ぶ", id:"reset" %></td>
     <td></td>
   </tr>
   <tr>
-    <td><img src="blue.png" class="myCard" alt=""></td>
-    <td><img src="blue.png" class="myCard" alt=""></td>
-    <td><img src="blue.png" class="myCard" alt=""></td>
-    <td><img src="blue.png" class="myCard" alt=""></td>
-    <td><img src="blue.png" class="myCard" alt=""></td>
+    <td><%= image_tag "blue.png", class:"myCard" %></td>
+    <td><%= image_tag "blue.png", class:"myCard" %></td>
+    <td><%= image_tag "blue.png", class:"myCard" %></td>
+    <td><%= image_tag "blue.png", class:"myCard" %></td>
+    <td><%= image_tag "blue.png", class:"myCard" %></td>
   </tr>
 </table>
-<script src="game.js"></script>
-
-

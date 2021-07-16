@@ -17,16 +17,17 @@ let isGameOver = false;
 
 // ページの読み込みが完了したとき実行する関数を登録
 window.addEventListener("load", loadHandler);
+document.addEventListener('DOMContentLoaded', function(){
 
-// 「カードを引く」ボタンを押したとき実行する関数を登録
-document.querySelector("#pick").addEventListener("click", clickPickHandler);
+  // 「カードを引く」ボタンを押したとき実行する関数を登録
+  document.querySelector("#pick").addEventListener("click", clickPickHandler);
 
-// 「勝負する！」ボタンを押したとき実行する関数を登録
-document.querySelector("#judge").addEventListener("click", clickJudgeHandler);
+  // 「勝負する！」ボタンを押したとき実行する関数を登録
+  document.querySelector("#judge").addEventListener("click", clickJudgeHandler);
 
-// 「もう1回遊ぶ」ボタンを押したとき実行する関数を登録
-document.querySelector("#reset").addEventListener("click", clickResetHandler);
-
+  // 「もう1回遊ぶ」ボタンを押したとき実行する関数を登録
+  document.querySelector("#reset").addEventListener("click", clickResetHandler);
+});
 /***********************************************
   イベントハンドラ
 ************************************************/
@@ -73,7 +74,7 @@ function clickJudgeHandler() {
 }
 
 // 「もう1回遊ぶ」ボタンを押したとき実行する関数
-function clickResultHandler() {
+function clickResetHandler() {
   // グローバル変数を初期化する
   cards = [];
   myCards = [];
@@ -183,7 +184,7 @@ function updateView() {
       myfields[i].setAttribute('src', getCardPath(myCards[i]));
     } else {
       // 裏面の画像を表示する
-      myfields[i].setAttribute('src', "blue.png");
+      myfields[i].setAttribute('src', "assets/blue.png");
     }
   }
   // 相手のカードを表示する
@@ -195,7 +196,7 @@ function updateView() {
       comfields[i].setAttribute('src', getCardPath(comCards[i]));
     } else {
       // 裏面の画像を表示する
-      comfields[i].setAttribute('src', "red.png");
+      comfields[i].setAttribute('src', "assets/red.png");
     }
   }
   // カードの合計を再計算する
@@ -209,9 +210,9 @@ function getCardPath(card) {
   let path = "";
   // カードの数字が1桁なら先頭に0をつける
   if (card <= 9) {
-    path = "0" + card + ".png";
+    path = "assets/0" + card + ".png";
   } else {
-    path = card + ".png";
+    path = "assets/" + card + ".png";
   }
   // カードのパスを返す
   return path;
@@ -268,7 +269,7 @@ function showResult(result) {
       break;
   }
   // メッセージを表示する
-  alter(message);
+  alert(message);
 }
 /***********************************************
   デバッグ関数
