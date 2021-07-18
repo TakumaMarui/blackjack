@@ -56,6 +56,10 @@ function clickPickHandler() {
     pickComCard();
     // 画面を更新する
     updateView();
+    // 自分の合計が21を越えた場合、勝敗判定に移る
+    if (getTotal(myCards) > 21) {
+      clickJudgeHandler();
+    }
   }
 }
 
@@ -64,10 +68,12 @@ function clickJudgeHandler() {
   let result = "";
   // 勝敗が未決定の場合
   if (isGameOver == false) {
+    // 画面を更新する（相手のカードを表示する）
+    updateView(true);
     // 勝敗を判定する
     result = judge();
-    // 勝敗を画面に表示する
-    showResult(result);
+    // 1秒後に勝敗を画面に表示する
+    setTimeout(showResult, 1000, result);
     // 勝敗決定フラグを「決定」に変更
     isGameOver = true;
   }
@@ -75,13 +81,9 @@ function clickJudgeHandler() {
 
 // 「もう1回遊ぶ」ボタンを押したとき実行する関数
 function clickResetHandler() {
-  // グローバル変数を初期化する
-  cards = [];
-  myCards = [];
-  comCards = [];
-  isGameOver = false;
   // 画面を初期表示に戻す
-  loadHandler();
+  // reloadメソッドでページを再読み込みする
+  location.reload();
 }
 
 /***********************************************
@@ -121,7 +123,7 @@ function pickComCard() {
   // 相手のカードの枚数が4枚以下の場合
   if ( comCards.length <= 4 ) {
     // カードを引くかどうか考える
-    if ( pickAI(comCards) ) {
+    while ( pickAI(comCards) && comCards.length <= 4) {
       // カードの山（配列）から1枚取り出す
       let card = cards.pop();
       // 取り出した1枚を自分のカード（配列）に追加する
@@ -174,7 +176,7 @@ function getTotal(handCards) {
 }
 
 // 画面を更新する関数
-function updateView() {
+function updateView(showComCards = false) {
   // 自分のカードを表示する
   let myfields = document.querySelectorAll(".myCard");
   for (let i = 0; i < myfields.length; i++) {
@@ -191,7 +193,7 @@ function updateView() {
   let comfields = document.querySelectorAll(".comCard");
   for (let i = 0; i < comfields.length; i++) {
     // 相手のカードの枚数がiより大きい場合
-    if (i < comCards.length) {
+    if (i == 0 || (i < comCards.length && showComCards == true)) {
       // 表面の画像を表示する
       comfields[i].setAttribute('src', getCardPath(comCards[i]));
     } else {
@@ -201,7 +203,9 @@ function updateView() {
   }
   // カードの合計を再計算する
   document.querySelector("#myTotal").innerText = getTotal(myCards);
-  document.querySelector("#comTotal").innerText = getTotal(comCards);
+  if (showComCards == true) {
+    document.querySelector("#comTotal").innerText = getTotal(comCards);
+  }
 }
 
 // カードの画像パスを求める関数
