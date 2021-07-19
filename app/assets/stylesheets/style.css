@@ -1,3 +1,45 @@
+/* リセットCSS */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
+/* ボディー */
+.wrapper{
+  background-color: green;
+}
+
+/* ヘッダー */
 .header {
   background-color: #fff;
   margin-bottom: 48px;
@@ -18,6 +60,7 @@
 }
 .nav__right {
   text-align: right;
+  margin-top: 20px;
 }
 .logo {
   font-size: 3em;
@@ -41,6 +84,7 @@
   background: black;
 }
 
+/* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
 }
@@ -76,6 +120,17 @@
   cursor: pointer;
 }
 
+/* フッター */
+.footer {
+  background-color: #fff;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+}
+
+/* タブレット対応 */
 @media (max-width: 1024px) {
   .inner {
     width: 90%;
@@ -83,6 +138,7 @@
   }
 }
 
+/* スマホ表示 */
 @media (max-width: 599px) {
   .inner {
     margin: 0 auto;
