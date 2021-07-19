@@ -5,23 +5,28 @@
     <td><%= image_tag "red.png", class:"comCard" %></td>
     <td><%= image_tag "red.png", class:"comCard" %></td>
     <td><%= image_tag "red.png", class:"comCard" %></td>
+    <td><%= image_tag "red.png", class:"comCard" %></td>
+    <td><%= image_tag "red.png", class:"comCard" %></td>
   </tr>
   <tr>
     <td></td>
-    <td><%= button_tag "カードを引く", id:"pick" %><br><%= button_tag "勝負する！", id:"judge" %></td>
+    <td></td>
+    <td><%= button_tag "Hit", id:"pick", class: :button %><br><%= button_tag "Stand", id:"judge", class: :button %></td>
     <td>
-      <%= image_tag "blue.png", id:"cards", alt:"" %>
+      <%= image_tag "red.png", id:"cards" %>
       <div id="myTotal" class="total"></div>
       <div id="comTotal" class="total"></div>
     </td>
-    <td><%= button_tag "もう一回遊ぶ", id:"reset" %></td>
+    <td><%= button_tag "Replay", id:"reset", class: :button %></td>
     <td></td>
   </tr>
   <tr>
-    <td><%= image_tag "blue.png", class:"myCard" %></td>
-    <td><%= image_tag "blue.png", class:"myCard" %></td>
-    <td><%= image_tag "blue.png", class:"myCard" %></td>
-    <td><%= image_tag "blue.png", class:"myCard" %></td>
-    <td><%= image_tag "blue.png", class:"myCard" %></td>
+    <td><%= image_tag "red.png", class:"myCard" %></td>
+    <td><%= image_tag "red.png", class:"myCard" %></td>
+    <td><%= image_tag "red.png", class:"myCard" %></td>
+    <td><%= image_tag "red.png", class:"myCard" %></td>
+    <td><%= image_tag "red.png", class:"myCard" %></td>
+    <td><%= image_tag "red.png", class:"myCard" %></td>
+    <td><%= image_tag "red.png", class:"myCard" %></td>
   </tr>
 </table>

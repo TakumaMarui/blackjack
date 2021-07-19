@@ -19,13 +19,13 @@ let isGameOver = false;
 window.addEventListener("load", loadHandler);
 document.addEventListener('DOMContentLoaded', function(){
 
-  // 「カードを引く」ボタンを押したとき実行する関数を登録
+  // 「Hit」ボタンを押したとき実行する関数を登録
   document.querySelector("#pick").addEventListener("click", clickPickHandler);
 
-  // 「勝負する！」ボタンを押したとき実行する関数を登録
+  // 「Stand」ボタンを押したとき実行する関数を登録
   document.querySelector("#judge").addEventListener("click", clickJudgeHandler);
 
-  // 「もう1回遊ぶ」ボタンを押したとき実行する関数を登録
+  // 「Replay」ボタンを押したとき実行する関数を登録
   document.querySelector("#reset").addEventListener("click", clickResetHandler);
 });
 /***********************************************
@@ -109,8 +109,8 @@ function shuffle() {
 
 // 自分がカードを引く関数
 function pickMyCard() {
-  // 自分のカードの枚数が4枚以下の場合
-  if ( myCards.length <= 4 ) {
+  // 自分のカードの枚数が6枚以下の場合
+  if ( myCards.length <= 6 ) {
     // カードの山（配列）から1枚取り出す
     let card = cards.pop();
     // 取り出した1枚を相手のカード（配列）に追加する
@@ -120,8 +120,8 @@ function pickMyCard() {
 
 // 相手がカードを引く関数
 function pickComCard() {
-  // 相手のカードの枚数が4枚以下の場合
-  if ( comCards.length <= 4 ) {
+  // 相手のカードの枚数が6枚以下の場合
+  if ( comCards.length <= 6 ) {
     // カードを引くかどうか考える
     while ( pickAI(comCards) && comCards.length <= 4) {
       // カードの山（配列）から1枚取り出す
@@ -186,7 +186,7 @@ function updateView(showComCards = false) {
       myfields[i].setAttribute('src', getCardPath(myCards[i]));
     } else {
       // 裏面の画像を表示する
-      myfields[i].setAttribute('src', "assets/blue.png");
+      myfields[i].setAttribute('src', "assets/red.png");
     }
   }
   // 相手のカードを表示する
@@ -235,7 +235,7 @@ function judge() {
     // 自分の合計が21を越えていれば負け
     result = "loose"
   }
-  else if (myTotal < 21 && comTotal > 21) {
+  else if (myTotal <= 21 && comTotal > 21) {
     // 相手の合計が21を越えていれば勝ち
     result = "win"
   }
@@ -263,13 +263,13 @@ function showResult(result) {
   // 勝敗に応じてメッセージを決める
   switch (result) {
     case "win":
-      message = "あなたの勝ちです！";
+      message = "WIN!";
       break;
     case "loose":
-      message = "あなたの負けです！";
+      message = "LOOSE!";
       break;
     case "draw":
-      message = "引き分けです！";
+      message = "DRAW!";
       break;
   }
   // メッセージを表示する
