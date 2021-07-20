@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function(){
   // 「Stand」ボタンを押したとき実行する関数を登録
   document.querySelector("#judge").addEventListener("click", clickJudgeHandler);
 
-  // 「Replay」ボタンを押したとき実行する関数を登録
+  // 「Start」ボタンを押したとき実行する関数を登録
   document.querySelector("#reset").addEventListener("click", clickResetHandler);
 });
 /***********************************************
@@ -36,18 +36,13 @@ document.addEventListener('DOMContentLoaded', function(){
 function loadHandler() {
   // シャッフル
   shuffle();
-  // 自分がカードを引く
-  pickMyCard();
-  // 相手がカードを引く
-  pickComCard();
-  // 画面を更新する
-  updateView();
   // デバッグ
   // debug();
 }
 
-// 「カードを引く」ボタンを押したとき実行する関数
+// 「Hit」ボタンを押したとき実行する関数
 function clickPickHandler() {
+  const button = document.getElementById("reset");
   // 勝敗が未決定の場合
   if (isGameOver == false) {
     // 自分がカードを引く
@@ -59,13 +54,16 @@ function clickPickHandler() {
     // 自分の合計が21を越えた場合、勝敗判定に移る
     if (getTotal(myCards) > 21) {
       clickJudgeHandler();
+      // スタートボタンを押せるようにする
+      button.disabled = false;
     }
   }
 }
 
-// 「勝負する！」ボタンを押したとき実行する関数
+// 「Stand」ボタンを押したとき実行する関数
 function clickJudgeHandler() {
   let result = "";
+  const button = document.getElementById("reset");
   // 勝敗が未決定の場合
   if (isGameOver == false) {
     // 画面を更新する（相手のカードを表示する）
@@ -76,14 +74,42 @@ function clickJudgeHandler() {
     setTimeout(showResult, 1000, result);
     // 勝敗決定フラグを「決定」に変更
     isGameOver = true;
+    // スタートボタンを押せるようにする
+    button.disabled = false;
   }
 }
 
-// 「もう1回遊ぶ」ボタンを押したとき実行する関数
+// 「Start」ボタンを押したとき実行する関数
 function clickResetHandler() {
+  let result = "";
+  const button = document.getElementById("reset");
+  // スタートボタンを押せなくする
+  button.disabled = true;
   // 画面を初期表示に戻す
-  // reloadメソッドでページを再読み込みする
-  location.reload();
+  cards = [];
+  myCards = [];
+  comCards = [];
+  isGameOver = false;
+  document.querySelector("#comTotal").innerText =[];
+  // ページを再読み込みする
+  loadHandler();
+  // 自分がカードを引く
+  pickMyCard();
+  pickMyCard();
+  // 相手がカードを引く
+  pickComCard();
+  // 画面を更新する
+  updateView();
+  // ブラックジャックかどうか判定する
+  result = blackjack();
+  // ブラックジャックであれば画面に表示する
+  if (getTotal(myCards) == 21) {
+    setTimeout(showResult, 1000, result);
+    // 勝敗決定フラグを「決定」に変更
+    isGameOver = true;
+    // スタートボタンを押せるようにする
+    button.disabled = false;
+  }
 }
 
 /***********************************************
@@ -222,6 +248,16 @@ function getCardPath(card) {
   return path;
 }
 
+// ブラックジャックかどうか判定する関数
+function blackjack() {
+  let result = "";
+  let myTotal = getTotal(myCards);
+  if (myTotal == 21){
+    result = "blackjack"
+  }
+  return result;
+}
+
 // 勝敗を判定する関数
 function judge() {
   // 勝敗を表す変数
@@ -270,6 +306,9 @@ function showResult(result) {
       break;
     case "draw":
       message = "DRAW!";
+      break;
+    case "blackjack":
+      message = "BLACKJACK!";
       break;
   }
   // メッセージを表示する
