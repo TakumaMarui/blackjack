@@ -1,3 +1,45 @@
+/* リセットCSS */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
+/* ボディー */
+.wrapper{
+  background-color: green;
+}
+
+/* ヘッダー */
 .header {
   background-color: #fff;
   margin-bottom: 48px;
@@ -18,7 +60,7 @@
 }
 .nav__right {
   text-align: right;
-  margin-top: -30px;
+  margin-top: 20px;
 }
 .logo {
   font-size: 3em;
@@ -42,6 +84,53 @@
   background: black;
 }
 
+/* フォーム周り */
+.form__wrapper{
+  min-height: calc(100vh - 161px);
+}
+
+.form__text {
+  width: 50%;
+}
+
+.field{
+  margin: 10px 0;
+}
+
+.actions{
+  margin-bottom: 40px;
+}
+
+.form__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #fff;
+  text-decoration: none;
+  user-select: none;
+  background: black;
+  border: 1px black solid;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+}
+
+.form__btn:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+/* フッター */
+.footer {
+  background-color: #fff;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+}
+
+/* タブレット対応 */
 @media (max-width: 1024px) {
   .inner {
     width: 90%;
@@ -49,6 +138,7 @@
   }
 }
 
+/* スマホ表示 */
 @media (max-width: 599px) {
   .inner {
     margin: 0 auto;
