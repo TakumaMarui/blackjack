@@ -14,13 +14,14 @@
       <td></td>
       <td><%= button_tag "Hit", id:"pick", class: :button %><br><%= button_tag "Stand", id:"judge", class: :button %></td>
       <td>
+        <input name="current_user_coin" type="hidden" value="<%= current_user.coin %>" class="current_user_coin" >
         <%= image_tag "red.png", id:"cards" %>
         <div id="myTotal" class="total"></div>
         <div id="comTotal" class="total"></div>
       </td>
       <td>
         <div>
-          <div id="myCoin">100枚</div>
+          <div id="myCoin"><%= current_user.coin %>枚</div>
           Bet
           <input type="text" id="betCoin" style="width:40px" value="10">
           枚

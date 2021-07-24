@@ -83,6 +83,19 @@ function clickJudgeHandler() {
 function clickResetHandler() {
   let result = "";
   const button = document.getElementById("reset");
+  // 変数のコントローラーへの受け渡し
+  let myCoin = $('.current_user_coin').val();
+  let betCoin = document.getElementById("betCoin").value;
+  let newCoin = myCoin - betCoin;
+  $.ajax({
+    url: '/users/update',  
+    type: 'GET',
+    dataType: 'html',
+    async: true,
+    data: {
+      coin: newCoin,
+    },
+  });
   // スタートボタンを押せなくする
   button.disabled = true;
   // 画面を初期表示に戻す
@@ -149,7 +162,7 @@ function pickComCard() {
   // 相手のカードの枚数が6枚以下の場合
   if ( comCards.length <= 6 ) {
     // カードを引くかどうか考える
-    while ( pickAI(comCards) && comCards.length <= 4) {
+    while ( pickAI(comCards) && comCards.length <= 6) {
       // カードの山（配列）から1枚取り出す
       let card = cards.pop();
       // 取り出した1枚を自分のカード（配列）に追加する
@@ -300,15 +313,58 @@ function showResult(result) {
   switch (result) {
     case "win":
       message = "WIN!";
+      let myCoinWin = $('.current_user_coin').val();
+      let betCoinWin = document.getElementById("betCoin").value;
+      let numMyCoinWin = parseInt(myCoinWin)
+      let numBetCoinWin = parseInt(betCoinWin)
+      let newCoinWin = numMyCoinWin + numBetCoinWin;
+      $.ajax({
+        url: '/users/update',  
+        type: 'GET',
+        dataType: 'html',
+        async: true,
+        data: {
+          coin: newCoinWin,
+        },
+      });
+      location.reload();
       break;
     case "loose":
       message = "LOOSE!";
+      location.reload();
       break;
     case "draw":
       message = "DRAW!";
+      let myCoinDraw = $('.current_user_coin').val();
+      let newCoinDraw = myCoinDraw;
+      $.ajax({
+        url: '/users/update',  
+        type: 'GET',
+        dataType: 'html',
+        async: true,
+        data: {
+          coin: newCoinDraw,
+        },
+      });
+      location.reload();
       break;
     case "blackjack":
       message = "BLACKJACK!";
+      let myCoinBlackjack = $('.current_user_coin').val();
+      let betCoinBlackjack = document.getElementById("betCoin").value;
+      let numMyCoinBlackjack = parseInt(myCoinBlackjack)
+      let numBetCoinBlackjack = parseInt(betCoinBlackjack)
+      let newCoinBlackjack = numMyCoinBlackjack + numBetCoinBlackjack * 1.5;
+      $.ajax({
+        url: '/users/update',  
+        type: 'GET',
+        dataType: 'html',
+        async: true,
+        data: {
+          coin: newCoinBlackjack,
+        },
+      });
+      location.reload();
       break;
   }
   // メッセージを表示する
