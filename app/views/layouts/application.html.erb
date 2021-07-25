@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
   </head>
@@ -21,6 +22,9 @@
             <div class="nav__right">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
               <%= link_to current_user.nickname, "#", class: :nav__btn %>
+              <div class="nav_coin">
+                <%= current_user.coin %>
+              </div>
             </div>
           <% else %>
             <div class="nav__right">
