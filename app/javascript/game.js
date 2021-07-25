@@ -86,7 +86,9 @@ function clickResetHandler() {
   // 変数のコントローラーへの受け渡し
   let myCoin = $('.current_user_coin').val();
   let betCoin = document.getElementById("betCoin").value;
-  let newCoin = myCoin - betCoin;
+  let numMyCoin = parseInt(myCoin)
+  let numBetCoin = parseInt(betCoin)
+  let newCoin = numMyCoin - numBetCoin;
   $.ajax({
     url: '/users/update',  
     type: 'GET',
@@ -128,6 +130,18 @@ function clickResetHandler() {
 /***********************************************
   ゲーム関数
 ************************************************/
+
+// betCoinに入力できる値の制限
+$(function(){
+  $('input[type="number"]').focusout(function() {
+    if(typeof $(this).attr('min') !== "undefined" && parseInt($(this).val()) < parseInt($(this).attr('min')))
+        $(this).val($(this).attr('min'));
+    else if(typeof $(this).attr('max') !== "undefined" && parseInt($(this).val()) > parseInt($(this).attr('max')))
+        $(this).val($(this).attr('max'));
+    else if(typeof $(this).attr('min') !== "undefined" && $(this).val() === '')
+        $(this).val($(this).attr('min'));
+  });
+});
 
 // カードの山をシャッフルする関数
 function shuffle() {

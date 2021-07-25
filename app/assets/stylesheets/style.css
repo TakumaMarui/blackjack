@@ -58,6 +58,18 @@ a {
 .nav__left {
   text-align: left;
 }
+.nav_coin {
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: black;
+  text-decoration: none;
+  user-select: none;
+  border: 1px black solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  
+}
 .nav__right {
   text-align: right;
   margin-top: 20px;
@@ -138,9 +150,32 @@ a {
   }
 }
 
+@media (max-width: 730px) {
+  .inner {
+    width: 90%;
+    margin: 0 auto;
+  }
+  #table {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    table-layout: fixed;
+  }
+}
+
 /* スマホ表示 */
 @media (max-width: 599px) {
   .inner {
     margin: 0 auto;
+  }
+  #table {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    table-layout: fixed;
   }
 }
