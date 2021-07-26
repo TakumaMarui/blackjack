@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get 'users/update'
   post 'users/update'
   root to: "games#index"
-  resources :users, only: :update
+  resources :users, only: [:index, :update]
 end
