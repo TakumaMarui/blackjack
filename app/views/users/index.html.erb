@@ -1,0 +1,11 @@
+<div class="scroll">
+  <table class="list">
+    <% @user.each.with_index(1) do |user, i| %>
+      <tr>
+        <td class="list_td"><%= i %></td>
+        <td class="list_td"><%= link_to user.nickname, "#" %></td>
+        <td class="list_td"><%= user.coin %></td>
+      </tr>
+    <% end %>
+  <table>
+</div>

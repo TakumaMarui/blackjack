@@ -1,0 +1,13 @@
+.scroll{
+  height:400px;
+  overflow-y:scroll;
+}
+.list, .list_td{
+  border-collapse: collapse;
+  border: 1px solid black;
+  color: black;
+  background-color: #fff;
+  padding: 0.4em 1.6em;
+  margin-left: 10px;
+  text-align: center;
+}
