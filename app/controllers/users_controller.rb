@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @user = User.all.order(coin: :desc)
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+  
   def update
     @coin = params[:coin]
     user = User.find(current_user.id)
@@ -12,3 +16,4 @@ class UsersController < ApplicationController
     end
   end
 end
+
