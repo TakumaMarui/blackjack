@@ -6,7 +6,7 @@
         <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
         <div class="field">
-          <%= f.label :name, "ユーザー名" %><br />
+          <%= f.label :nickname, "ユーザー名" %><br />
           <%= f.text_field :nickname, id:"user_nickname" %>
         </div>
 
