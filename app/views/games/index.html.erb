@@ -13,7 +13,11 @@
     <tr>
       <td></td>
       <td></td>
-      <td><%= button_tag "Hit", id:"pick", class: :button %><br><%= button_tag "Stand", id:"judge", class: :button %></td>
+      <td>
+        <%= button_tag "Hit", id:"pick", class: :button %><br>
+        <%= button_tag "Stand", id:"judge", class: :button %><br>
+        <%= button_tag "Surrender", id:"surrender", class: :button %>
+      </td>
       <td>
         <%= image_tag "red.png", id:"cards" %>
         <div id="myTotal" class="total"></div>
