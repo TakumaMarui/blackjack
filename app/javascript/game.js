@@ -20,14 +20,13 @@ window.addEventListener("load", loadHandler);
 document.addEventListener('DOMContentLoaded', function(){
 
   // 「Hit」ボタンを押したとき実行する関数を登録
-  document.querySelector("#pick").addEventListener("click", clickPickHandler);
+  document.querySelector("#hit").addEventListener("click", clickHitHandler);
 
   // 「Stand」ボタンを押したとき実行する関数を登録
-  document.querySelector("#judge").addEventListener("click", clickJudgeHandler);
-
-  // 「Start」ボタンを押したとき実行する関数を登録
-  document.querySelector("#reset").addEventListener("click", clickResetHandler);
+  document.querySelector("#stand").addEventListener("click", clickStandHandler);
   document.querySelector("#surrender").addEventListener("click", clickSurrenderHandler);
+  // 「Start」ボタンを押したとき実行する関数を登録
+  document.querySelector("#start").addEventListener("click", clickStartHandler);
 });
 /***********************************************
   イベントハンドラ
@@ -35,7 +34,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
 // ページの読み込みが完了したとき実行する関数
 function loadHandler() {
+  const hitButton = document.getElementById("hit");
+  const standButton = document.getElementById("stand");
   const surrenderButton = document.getElementById("surrender");
+  hitButton.disabled = true;
+  standButton.disabled = true;
   surrenderButton.disabled = true;
   // シャッフル
   shuffle();
@@ -44,8 +47,9 @@ function loadHandler() {
 }
 
 // 「Hit」ボタンを押したとき実行する関数
-function clickPickHandler() {
-  const startButton = document.getElementById("reset");
+function clickHitHandler() {
+  const startButton = document.getElementById("start");
+  const surrenderButton = document.getElementById("surrender");
   // 勝敗が未決定の場合
   if (isGameOver == false) {
     // 自分がカードを引く
@@ -56,17 +60,18 @@ function clickPickHandler() {
     updateView();
     // 自分の合計が21を越えた場合、勝敗判定に移る
     if (getTotal(myCards) > 21) {
-      clickJudgeHandler();
+      clickStandHandler();
       // スタートボタンを押せるようにする
       startButton.disabled = false;
     }
   }
+  surrenderButton.disabled = true;
 }
 
 // 「Stand」ボタンを押したとき実行する関数
-function clickJudgeHandler() {
+function clickStandHandler() {
   let result = "";
-  const startButton = document.getElementById("reset");
+  const startButton = document.getElementById("start");
   // 勝敗が未決定の場合
   if (isGameOver == false) {
     // 画面を更新する（相手のカードを表示する）
@@ -82,12 +87,13 @@ function clickJudgeHandler() {
   }
 }
 
+// 「Surrender」ボタンを押したときに実行する関数
 function clickSurrenderHandler() {
   let myCoinSurrender = $('.current_user_coin').val();
   let betCoinSurrender = document.getElementById("betCoin").value;
   let numMyCoinSurrender = parseInt(myCoinSurrender)
   let numBetCoinSurrender = parseInt(betCoinSurrender)
-  let newCoinSurrender = numMyCoinSurrender - (numBetCoinSurrender / 2);
+  let newCoinSurrender = numMyCoinSurrender - numBetCoinSurrender / 2;
   $.ajax({
     url: '/users/update',  
     type: 'GET',
@@ -98,12 +104,18 @@ function clickSurrenderHandler() {
     },
   });
   location.reload();
+  isGameOver = true;
+  location.reload();
+  location.reload();
+  location.reload();
 }
 
 // 「Start」ボタンを押したとき実行する関数
-function clickResetHandler() {
+function clickStartHandler() {
   let result = "";
-  const startButton = document.getElementById("reset");
+  const startButton = document.getElementById("start");
+  const hitButton = document.getElementById("hit");
+  const standButton = document.getElementById("stand");
   const surrenderButton = document.getElementById("surrender");
   // 変数のコントローラーへの受け渡し
   let myCoin = $('.current_user_coin').val();
@@ -147,6 +159,8 @@ function clickResetHandler() {
     // スタートボタンを押せるようにする
     startButton.disabled = false;
   }
+  hitButton.disabled = false;
+  standButton.disabled = false;
   surrenderButton.disabled = false;
 }
 

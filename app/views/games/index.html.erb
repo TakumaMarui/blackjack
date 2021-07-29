@@ -14,8 +14,8 @@
       <td></td>
       <td></td>
       <td>
-        <%= button_tag "Hit", id:"pick", class: :button %><br>
-        <%= button_tag "Stand", id:"judge", class: :button %><br>
+        <%= button_tag "Hit", id:"hit", class: :button %><br>
+        <%= button_tag "Stand", id:"stand", class: :button %><br>
         <%= button_tag "Surrender", id:"surrender", class: :button %>
       </td>
       <td>
@@ -27,7 +27,7 @@
         <div>
           <input type="number" min="1" max="<%= current_user.coin %>" step="1" id="betCoin" style="width:90px" value="10">
         </div>
-        <%= button_tag "Start", id:"reset", class: :button %>
+        <%= button_tag "Start", id:"start", class: :button %>
       </td>
       <td></td>
       <td></td>
