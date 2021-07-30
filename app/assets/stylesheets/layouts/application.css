@@ -36,12 +36,33 @@ a {
 
 /* ボディー */
 .wrapper{
-  background-color: green;
+  background:
+  linear-gradient(27deg, #024107 5px, transparent 5px) 0 5px,
+  linear-gradient(207deg, #01441a 5px, transparent 5px) 10px 0px,
+  linear-gradient(27deg, rgb(3, 65, 1) 5px, transparent 5px) 0px 10px,
+  linear-gradient(207deg, rgb(3, 65, 1) 5px, transparent 5px) 10px 5px,
+  linear-gradient(90deg, #01420f 10px, transparent 10px),
+  linear-gradient(#014114 25%, #01440a 25%, #01440a 50%, transparent 50%, transparent 75%, #01440c 75%, #01440c);
+  background-color: #014205;
+  background-size: 20px 20px;
 }
 
 /* ヘッダー */
 .header {
-  background-color: #fff;
+  background:
+    repeating-radial-gradient(
+      circle at -1000% 0%,
+      rgba(116, 77, 48, 0.7),
+      #573216 7.5%,
+      rgba(116, 77, 48, 0.9) 10%
+    ),
+    repeating-radial-gradient(
+      circle at -10% 500%,
+      #573216,
+      #573216 0.1%,
+      #744d30 0.4%,
+      #744d30 0.5%
+    );
   margin-bottom: 48px;
   padding: 20px 0;
 
@@ -59,6 +80,7 @@ a {
   text-align: left;
 }
 .nav_coin {
+  background-color: #fff;
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
@@ -79,8 +101,13 @@ a {
   color: black;
   text-decoration: none;
   font-family: 'IM Fell DW Pica SC', serif;
+  text-shadow:  2px  2px 10px #fff ,
+  -2px  2px 10px #fff ,
+   2px -2px 10px #fff ,
+  -2px -2px 10px #fff;
 }
 .nav__btn{
+  background-color: #fff;
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
@@ -134,12 +161,34 @@ a {
 
 /* フッター */
 .footer {
-  background-color: #fff;
+  background:
+    repeating-radial-gradient(
+      circle at -1000% 0%,
+      rgba(116, 77, 48, 0.7),
+      #573216 7.5%,
+      rgba(116, 77, 48, 0.9) 10%
+    ),
+    repeating-radial-gradient(
+      circle at -10% 500%,
+      #573216,
+      #573216 0.1%,
+      #744d30 0.4%,
+      #744d30 0.5%
+    );
   padding: 10px 0;
   position: absolute;
   bottom: 0;
   height: 100px;
   width: 100%;
+}
+
+/* 新規登録・ログイン */
+.page-heading{
+  color: #fff;
+}
+
+.field {
+  color: #fff;
 }
 
 /* タブレット対応 */

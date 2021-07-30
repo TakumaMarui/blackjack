@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <input name="current_user_coin" type="hidden" value="<%= current_user.coin %>" class="current_user_coin" >
+  <input name="current_user_coin" type="hidden" value="<%= current_user.coin %>" class="current_user_coin">
   <table id="table">
     <tr>
       <td><%= image_tag "red.png", class:"comCard" %></td>
@@ -41,6 +41,36 @@
       <td><%= image_tag "red.png", class:"myCard" %></td>
       <td><%= image_tag "red.png", class:"myCard" %></td>
       <td><%= image_tag "red.png", class:"myCard" %></td>
+    </tr>
+  </table>
+<% else %>
+  <table id="table">
+    <tr>
+      <td><%= image_tag "27.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><%= image_tag "red.png" %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><%= image_tag "01.png" %></td>
+      <td><%= image_tag "10.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
     </tr>
   </table>
 <% end %>
