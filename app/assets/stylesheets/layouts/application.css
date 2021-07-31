@@ -80,17 +80,23 @@ a {
   text-align: left;
 }
 .nav_coin {
-  background-color: #fff;
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  padding: 0.1em 1em;
+  font-size: 0.9em;
+  font-weight: bold;
   color: black;
   text-decoration: none;
   user-select: none;
-  border: 1px black solid;
   border-radius: 3px;
   transition: 0.4s ease;
-  
+  border-top: 4px solid #ececcc;
+  border-right: 4px solid #cea82c;
+  border-bottom: 4px solid #987c1e;
+  border-left: 4px solid #ffed8b;
+  border-radius: 0;
+  background-image: -webkit-linear-gradient(135deg, #987c1e 0%, #ffed8b 20%, #ececcc 34%, white 53%, #cea82c 100%);
+  background-image: linear-gradient(-45deg, #987c1e 0%, #ffed8b 20%, #ececcc 34%, white 53%, #cea82c 100%);
+  text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff;
 }
 .nav__right {
   text-align: right;
@@ -107,20 +113,26 @@ a {
   -2px -2px 10px #fff;
 }
 .nav__btn{
-  background-color: #fff;
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  padding: 0.1em 1em;
+  font-size: 0.9em;
+  font-weight: bold;
   color: black;
   text-decoration: none;
   user-select: none;
-  border: 1px black solid;
   border-radius: 3px;
   transition: 0.4s ease;
+  border-top: 4px solid #d8dcdc;
+  border-right: 4px solid #666;
+  border-bottom: 4px solid #333;
+  border-left: 4px solid #868888;
+  border-radius: 0;
+  background-image: -webkit-linear-gradient(135deg, #333 0%, #868888 20%, #d8dcdc 34%, rgb(221, 221, 221) 53%, #666 100%);
+  background-image: linear-gradient(-45deg, #333 0%, #868888 20%, #d8dcdc 34%, rgb(221, 221, 221) 53%, #666 100%);
+  text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff;
 }
 .nav__btn:hover{
-  color: #fff;
-  background: black;
+  text-shadow: 0 0 9px #fff, 0 0 9px #fff, 0 0 9px #fff, 0 0 9px #fff, 0 0 9px #fff, 0 0 9px #fff, 0 0 9px #fff, 0 0 9px #fff;
 }
 
 /* フォーム周り */

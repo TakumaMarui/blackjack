@@ -1,13 +1,30 @@
 .scroll{
-  height:400px;
+  height: 400px;
   overflow-y:scroll;
 }
-.list, .list_td{
-  border-collapse: collapse;
-  border: 1px solid black;
+.list{
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.list_td{
+  background-color: rgb(250, 250, 233);
+  border-bottom: 1px solid black;
+  font-weight: bold;
   color: black;
-  background-color: #fff;
-  padding: 0.4em 1.6em;
-  margin-left: 10px;
+  padding: 0.4em 3em;
+}
+.list_number{
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
   text-align: center;
+}
+.list_coin{
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  text-align: center;
+}
+.nickname{
+  color: black;
 }
