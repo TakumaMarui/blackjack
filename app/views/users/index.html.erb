@@ -3,7 +3,14 @@
     <% @user.each.with_index(1) do |user, i| %>
       <tr>
         <td class="list_td list_number"><%= i %></td>
-        <td class="list_td "><%= link_to user.nickname, "#", class: :nickname %></td>
+        <td class="list_td list_image">
+          <% if user.image.attached? %>
+            <%= image_tag user.image, class: :image %>
+          <% else %>
+            <%= image_tag ("default.png"), class: :image %>
+          <% end %>
+        </td>
+        <td class="list_td list_nickname"><%= link_to user.nickname, "#", class: :nickname %></td>
         <td class="list_td list_coin"><%= user.coin %></td>
       </tr>
       <tr>

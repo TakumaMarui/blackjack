@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :password, format: { with: VALID_PASSWORD_REGEX }
   validates :nickname, presence: true
   validates :coin, presence: true
+
+  has_one_attached :image
 end

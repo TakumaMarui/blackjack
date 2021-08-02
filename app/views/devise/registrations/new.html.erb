@@ -11,6 +11,11 @@
         </div>
 
         <div class="field">
+          <%= f.label :image, "画像" %><br />
+          <%= f.file_field :image, id:"user_image" %>
+        </div>
+
+        <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
         </div>
@@ -23,6 +28,11 @@
         <div class="field">
           <%= f.label :password_confirmation, "パスワード再入力" %><br />
           <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :profile, "プロフィール" %><br />
+          <%= f.text_area :profile, class: :form__text, id:"user_profile" %>
         </div>
         
         <div class="actions">

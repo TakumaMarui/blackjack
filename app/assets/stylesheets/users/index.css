@@ -1,5 +1,5 @@
 .scroll{
-  height: 400px;
+  height: calc(100vh - 300px);
   overflow-y:scroll;
 }
 .list{
@@ -19,12 +19,32 @@
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+  padding-left: 50px;
+}
+.list_image{
+  padding-left: 30px;
+  padding-right: 0;
+}
+.list_nickname{
+  padding-left: 20px;
+  padding-right: 100px;
 }
 .list_coin{
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   text-align: center;
+  font-family: 'Economica', sans-serif;
+  font-size: 25px;
+  padding-right: 50px;
+}
+.image{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
 .nickname{
   color: black;
+  font-size: 20px;
 }
