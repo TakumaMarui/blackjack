@@ -10,7 +10,7 @@
             <%= image_tag ("default.png"), class: :image %>
           <% end %>
         </td>
-        <td class="list_td list_nickname"><%= link_to user.nickname, "#", class: :nickname %></td>
+        <td class="list_td list_nickname"><%= link_to user.nickname, user_path(user.id), class: :nickname %></td>
         <td class="list_td list_coin"><%= user.coin %></td>
       </tr>
       <tr>
