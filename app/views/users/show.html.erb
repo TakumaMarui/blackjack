@@ -18,6 +18,6 @@
 </div>
 <% if user_signed_in? && @user.nickname == current_user.nickname %>
   <div class="user__manage">
-    <%= link_to "編集する", "#", class: :user__btn %>
+    <%= link_to "編集する", edit_user_path, class: :user__btn %>
   </div>
 <% end %>

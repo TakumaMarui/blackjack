@@ -113,7 +113,7 @@ function clickSurrenderHandler() {
   let numBetCoinSurrender = parseInt(betCoinSurrender)
   let newCoinSurrender = numMyCoinSurrender - numBetCoinSurrender / 2;
   $.ajax({
-    url: '/users/update',  
+    url: '/users/update_coin',  
     type: 'GET',
     dataType: 'html',
     async: true,
@@ -144,7 +144,7 @@ function clickStartHandler() {
   let numBetCoin = parseInt(betCoin)
   let newCoin = numMyCoin - numBetCoin;
   $.ajax({
-    url: '/users/update',  
+    url: '/users/update_coin',  
     type: 'GET',
     dataType: 'html',
     async: true,
@@ -425,7 +425,7 @@ function showResult(result) {
       let numBetCoinWin = parseInt(betCoinWin)
       let newCoinWin = numMyCoinWin + numBetCoinWin;
       $.ajax({
-        url: '/users/update',  
+        url: '/users/update_coin',  
         type: 'GET',
         dataType: 'html',
         async: true,
@@ -444,7 +444,7 @@ function showResult(result) {
       let myCoinDraw = $('.current_user_coin').val();
       let newCoinDraw = myCoinDraw;
       $.ajax({
-        url: '/users/update',  
+        url: '/users/update_coin',  
         type: 'GET',
         dataType: 'html',
         async: true,
@@ -462,7 +462,7 @@ function showResult(result) {
       let numBetCoinBlackjack = parseInt(betCoinBlackjack)
       let newCoinBlackjack = numMyCoinBlackjack + numBetCoinBlackjack * 1.5;
       $.ajax({
-        url: '/users/update',  
+        url: '/users/update_coin',  
         type: 'GET',
         dataType: 'html',
         async: true,
@@ -480,7 +480,7 @@ function showResult(result) {
       let numBetCoinDoubleWin = parseInt(betCoinDoubleWin)
       let newCoinDoubleWin = numMyCoinDoubleWin + numBetCoinDoubleWin * 2;
       $.ajax({
-        url: '/users/update',  
+        url: '/users/update_coin',  
         type: 'GET',
         dataType: 'html',
         async: true,
@@ -498,7 +498,7 @@ function showResult(result) {
       let numBetCoinDoubleLoose = parseInt(betCoinDoubleLoose)
       let newCoinDoubleLoose = numMyCoinDoubleLoose - numBetCoinDoubleLoose * 2;
       $.ajax({
-        url: '/users/update',  
+        url: '/users/update_coin',  
         type: 'GET',
         dataType: 'html',
         async: true,
