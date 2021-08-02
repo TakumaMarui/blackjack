@@ -36,15 +36,35 @@ a {
 
 /* ボディー */
 .wrapper{
-  background-color: green;
+  background:
+  linear-gradient(27deg, #024107 5px, transparent 5px) 0 5px,
+  linear-gradient(207deg, #01441a 5px, transparent 5px) 10px 0px,
+  linear-gradient(27deg, rgb(3, 65, 1) 5px, transparent 5px) 0px 10px,
+  linear-gradient(207deg, rgb(3, 65, 1) 5px, transparent 5px) 10px 5px,
+  linear-gradient(90deg, #01420f 10px, transparent 10px),
+  linear-gradient(#014114 25%, #01440a 25%, #01440a 50%, transparent 50%, transparent 75%, #01440c 75%, #01440c);
+  background-color: #014205;
+  background-size: 20px 20px;
 }
 
 /* ヘッダー */
 .header {
-  background-color: #fff;
+  background:
+    repeating-radial-gradient(
+      circle at -1000% 0%,
+      rgba(116, 77, 48, 0.7),
+      #573216 7.5%,
+      rgba(116, 77, 48, 0.9) 10%
+    ),
+    repeating-radial-gradient(
+      circle at -10% 500%,
+      #573216,
+      #573216 0.1%,
+      #744d30 0.4%,
+      #744d30 0.5%
+    );
   margin-bottom: 48px;
   padding: 20px 0;
-
 }
 .inner {
   width: 1024px;
@@ -60,15 +80,21 @@ a {
 }
 .nav_coin {
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  padding: 0.1em 1em;
+  font-size: 0.9em;
+  font-weight: bold;
   color: black;
   text-decoration: none;
   user-select: none;
-  border: 1px black solid;
-  border-radius: 3px;
   transition: 0.4s ease;
-  
+  border-top: 4px solid #987c1e;
+  border-right: 4px solid #ffed8b;
+  border-bottom: 4px solid #ececcc;
+  border-left: 4px solid #cea82c;
+  border-radius: 0;
+  background-image: -webkit-linear-gradient(135deg, #987c1e 0%, #ffed8b 20%, #ececcc 34%, white 53%, #cea82c 100%);
+  background-image: linear-gradient(-45deg, #987c1e 0%, #ffed8b 20%, #ececcc 34%, white 53%, #cea82c 100%);
+  text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff;
 }
 .nav__right {
   text-align: right;
@@ -79,21 +105,42 @@ a {
   color: black;
   text-decoration: none;
   font-family: 'IM Fell DW Pica SC', serif;
+  text-shadow:  2px  2px 10px rgb(252, 250, 236),
+  -2px  2px 10px rgb(252, 250, 236),
+   2px -2px 10px rgb(252, 250, 236),
+  -2px -2px 10px rgb(252, 250, 236);
+}
+.logo:hover {
+  text-shadow:  2px  2px 15px rgb(252, 250, 236),
+  -2px  2px 15px rgb(252, 250, 236),
+   2px -2px 15px rgb(252, 250, 236),
+  -2px -2px 15px rgb(252, 250, 236);
 }
 .nav__btn{
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  padding: 0.3em 1em;
+  font-size: 0.9em;
+  font-weight: bold;
   color: black;
   text-decoration: none;
   user-select: none;
-  border: 1px black solid;
-  border-radius: 3px;
   transition: 0.4s ease;
+  border-top: 1px solid #d8dcdc;
+  border-right: 4px solid #666;
+  border-bottom: 10px solid #333;
+  border-left: 4px solid #868888;
+  border-radius: 0;
+  background-image: -webkit-linear-gradient(135deg, #333 0%, #868888 20%, #d8dcdc 34%, rgb(221, 221, 221) 53%, #666 100%);
+  background-image: linear-gradient(-45deg, #333 0%, #868888 20%, #d8dcdc 34%, rgb(221, 221, 221) 53%, #666 100%);
+  text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #fff;
 }
 .nav__btn:hover{
-  color: #fff;
-  background: black;
+  padding: 0.3em 1em;
+  vertical-align: -4px;
+  border-top: 1px solid #d8dcdc;
+  border-right: 4px solid #666;
+  border-bottom: 6px solid #333;
+  border-left: 4px solid #868888;
+  text-shadow: 0 0 9px #fff, 0 0 9px #fff, 0 0 9px #fff, 0 0 9px #fff, 0 0 9px #fff, 0 0 9px #fff, 0 0 9px #fff, 0 0 9px #fff;
 }
 
 /* フォーム周り */
@@ -134,12 +181,34 @@ a {
 
 /* フッター */
 .footer {
-  background-color: #fff;
+  background:
+    repeating-radial-gradient(
+      circle at -1000% 0%,
+      rgba(116, 77, 48, 0.7),
+      #573216 7.5%,
+      rgba(116, 77, 48, 0.9) 10%
+    ),
+    repeating-radial-gradient(
+      circle at -10% 500%,
+      #573216,
+      #573216 0.1%,
+      #744d30 0.4%,
+      #744d30 0.5%
+    );
   padding: 10px 0;
   position: absolute;
   bottom: 0;
   height: 100px;
   width: 100%;
+}
+
+/* 新規登録・ログイン */
+.page-heading{
+  color: #fff;
+}
+
+.field {
+  color: #fff;
 }
 
 /* タブレット対応 */

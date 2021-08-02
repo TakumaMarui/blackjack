@@ -20,13 +20,14 @@ window.addEventListener("load", loadHandler);
 document.addEventListener('DOMContentLoaded', function(){
 
   // 「Hit」ボタンを押したとき実行する関数を登録
-  document.querySelector("#pick").addEventListener("click", clickPickHandler);
+  document.querySelector("#hit").addEventListener("click", clickHitHandler);
 
   // 「Stand」ボタンを押したとき実行する関数を登録
-  document.querySelector("#judge").addEventListener("click", clickJudgeHandler);
-
+  document.querySelector("#stand").addEventListener("click", clickStandHandler);
+  document.querySelector("#double").addEventListener("click", clickDoubleHandler);
+  document.querySelector("#surrender").addEventListener("click", clickSurrenderHandler);
   // 「Start」ボタンを押したとき実行する関数を登録
-  document.querySelector("#reset").addEventListener("click", clickResetHandler);
+  document.querySelector("#start").addEventListener("click", clickStartHandler);
 });
 /***********************************************
   イベントハンドラ
@@ -34,6 +35,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
 // ページの読み込みが完了したとき実行する関数
 function loadHandler() {
+  const hitButton = document.getElementById("hit");
+  const standButton = document.getElementById("stand");
+  const doubleButton = document.getElementById("double");
+  const surrenderButton = document.getElementById("surrender");
+  hitButton.disabled = true;
+  standButton.disabled = true;
+  doubleButton.disabled = true;
+  surrenderButton.disabled = true;
   // シャッフル
   shuffle();
   // デバッグ
@@ -41,8 +50,10 @@ function loadHandler() {
 }
 
 // 「Hit」ボタンを押したとき実行する関数
-function clickPickHandler() {
-  const button = document.getElementById("reset");
+function clickHitHandler() {
+  const startButton = document.getElementById("start");
+  const doubleButton = document.getElementById("double");
+  const surrenderButton = document.getElementById("surrender");
   // 勝敗が未決定の場合
   if (isGameOver == false) {
     // 自分がカードを引く
@@ -53,17 +64,19 @@ function clickPickHandler() {
     updateView();
     // 自分の合計が21を越えた場合、勝敗判定に移る
     if (getTotal(myCards) > 21) {
-      clickJudgeHandler();
+      clickStandHandler();
       // スタートボタンを押せるようにする
-      button.disabled = false;
+      startButton.disabled = false;
     }
   }
+  doubleButton.disabled = true;
+  surrenderButton.disabled = true;
 }
 
 // 「Stand」ボタンを押したとき実行する関数
-function clickJudgeHandler() {
+function clickStandHandler() {
   let result = "";
-  const button = document.getElementById("reset");
+  const startButton = document.getElementById("start");
   // 勝敗が未決定の場合
   if (isGameOver == false) {
     // 画面を更新する（相手のカードを表示する）
@@ -75,14 +88,55 @@ function clickJudgeHandler() {
     // 勝敗決定フラグを「決定」に変更
     isGameOver = true;
     // スタートボタンを押せるようにする
-    button.disabled = false;
+    startButton.disabled = false;
   }
 }
 
-// 「Start」ボタンを押したとき実行する関数
-function clickResetHandler() {
+// 「Double」ボタンを押したときに実行する関数
+function clickDoubleHandler() {
   let result = "";
-  const button = document.getElementById("reset");
+  const startButton = document.getElementById("start");
+  pickMyCard();
+  pickComCard();
+  updateView(true);
+  result = doubleDown();
+  setTimeout(showResult, 1000, result);
+  isGameOver = true;
+  startButton.disabled = false;
+}
+
+// 「Surrender」ボタンを押したときに実行する関数
+function clickSurrenderHandler() {
+  let myCoinSurrender = $('.current_user_coin').val();
+  let betCoinSurrender = document.getElementById("betCoin").value;
+  let numMyCoinSurrender = parseInt(myCoinSurrender)
+  let numBetCoinSurrender = parseInt(betCoinSurrender)
+  let newCoinSurrender = numMyCoinSurrender - numBetCoinSurrender / 2;
+  $.ajax({
+    url: '/users/update',  
+    type: 'GET',
+    dataType: 'html',
+    async: true,
+    data: {
+      coin: newCoinSurrender,
+    },
+  });
+  location.reload();
+  isGameOver = true;
+  location.reload();
+  location.reload();
+  location.reload();
+  location.reload();
+}
+
+// 「Start」ボタンを押したとき実行する関数
+function clickStartHandler() {
+  let result = "";
+  const startButton = document.getElementById("start");
+  const hitButton = document.getElementById("hit");
+  const standButton = document.getElementById("stand");
+  const doubleButton = document.getElementById("double");
+  const surrenderButton = document.getElementById("surrender");
   // 変数のコントローラーへの受け渡し
   let myCoin = $('.current_user_coin').val();
   let betCoin = document.getElementById("betCoin").value;
@@ -99,7 +153,7 @@ function clickResetHandler() {
     },
   });
   // スタートボタンを押せなくする
-  button.disabled = true;
+  startButton.disabled = true;
   // 画面を初期表示に戻す
   cards = [];
   myCards = [];
@@ -123,8 +177,12 @@ function clickResetHandler() {
     // 勝敗決定フラグを「決定」に変更
     isGameOver = true;
     // スタートボタンを押せるようにする
-    button.disabled = false;
+    startButton.disabled = false;
   }
+  hitButton.disabled = false;
+  standButton.disabled = false;
+  doubleButton.disabled = false;
+  surrenderButton.disabled = false;
 }
 
 /***********************************************
@@ -319,6 +377,40 @@ function judge() {
   return result;
 }
 
+// DoubleDownしたときに勝敗を判定する関数
+function doubleDown() {
+  // 勝敗を表す変数
+  let result = "";
+  // 自分のカードの合計を求める
+  let myTotal = getTotal(myCards);
+  // 相手のカードの合計を求める
+  let comTotal = getTotal(comCards);
+  // 勝敗のパターン表に当てはめて勝敗を決める
+  if (myTotal > 21) {
+    // 自分の合計が21を越えていれば負け
+    result = "doubleLoose"
+  }
+  else if (myTotal <= 21 && comTotal > 21) {
+    // 相手の合計が21を越えていれば勝ち
+    result = "doubleWin"
+  }
+  else {
+    // 自分も相手も21を越えていない場合
+    if (myTotal > comTotal) {
+      // 自分の合計が相手の合計より大きければ勝ち
+      result = "doubleWin";
+    } else if (myTotal < comTotal) {
+      // 自分の合計が相手の合計より小さければ負け
+      result = "doubleLoose";
+    } else {
+      // 自分の合計が相手の合計と同じなら引き分け
+      result = "draw";
+    }
+  }
+  // 勝敗を呼び出し元に返す
+  return result;
+}
+
 // 勝敗を画面に表示する関数
 function showResult(result) {
   // メッセージを入れる変数
@@ -376,6 +468,42 @@ function showResult(result) {
         async: true,
         data: {
           coin: newCoinBlackjack,
+        },
+      });
+      location.reload();
+      break;
+    case "doubleWin":
+      message = "WIN!";
+      let myCoinDoubleWin = $('.current_user_coin').val();
+      let betCoinDoubleWin = document.getElementById("betCoin").value;
+      let numMyCoinDoubleWin = parseInt(myCoinDoubleWin)
+      let numBetCoinDoubleWin = parseInt(betCoinDoubleWin)
+      let newCoinDoubleWin = numMyCoinDoubleWin + numBetCoinDoubleWin * 2;
+      $.ajax({
+        url: '/users/update',  
+        type: 'GET',
+        dataType: 'html',
+        async: true,
+        data: {
+          coin: newCoinDoubleWin,
+        },
+      });
+      location.reload();
+      break;
+    case "doubleLoose":
+      message = "LOOSE!";
+      let myCoinDoubleLoose = $('.current_user_coin').val();
+      let betCoinDoubleLoose = document.getElementById("betCoin").value;
+      let numMyCoinDoubleLoose = parseInt(myCoinDoubleLoose)
+      let numBetCoinDoubleLoose = parseInt(betCoinDoubleLoose)
+      let newCoinDoubleLoose = numMyCoinDoubleLoose - numBetCoinDoubleLoose * 2;
+      $.ajax({
+        url: '/users/update',  
+        type: 'GET',
+        dataType: 'html',
+        async: true,
+        data: {
+          coin: newCoinDoubleLoose,
         },
       });
       location.reload();

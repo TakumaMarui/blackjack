@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <input name="current_user_coin" type="hidden" value="<%= current_user.coin %>" class="current_user_coin" >
+  <input name="current_user_coin" type="hidden" value="<%= current_user.coin %>" class="current_user_coin">
   <table id="table">
     <tr>
       <td><%= image_tag "red.png", class:"comCard" %></td>
@@ -13,7 +13,12 @@
     <tr>
       <td></td>
       <td></td>
-      <td><%= button_tag "Hit", id:"pick", class: :button %><br><%= button_tag "Stand", id:"judge", class: :button %></td>
+      <td>
+        <%= button_tag "Hit", id:"hit", class: :button %><br>
+        <%= button_tag "Stand", id:"stand", class: :button %><br>
+        <%= button_tag "Double", id:"double", class: :button %><br>
+        <%= button_tag "Surrender", id:"surrender", class: :button %>
+      </td>
       <td>
         <%= image_tag "red.png", id:"cards" %>
         <div id="myTotal" class="total"></div>
@@ -23,7 +28,7 @@
         <div>
           <input type="number" min="1" max="<%= current_user.coin %>" step="1" id="betCoin" style="width:90px" value="10">
         </div>
-        <%= button_tag "Start", id:"reset", class: :button %>
+        <%= button_tag "Start", id:"start", class: :button %>
       </td>
       <td></td>
       <td></td>
@@ -36,6 +41,36 @@
       <td><%= image_tag "red.png", class:"myCard" %></td>
       <td><%= image_tag "red.png", class:"myCard" %></td>
       <td><%= image_tag "red.png", class:"myCard" %></td>
+    </tr>
+  </table>
+<% else %>
+  <table id="table">
+    <tr>
+      <td><%= image_tag "27.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><%= image_tag "red.png" %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><%= image_tag "01.png" %></td>
+      <td><%= image_tag "10.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
+      <td><%= image_tag "red.png" %></td>
     </tr>
   </table>
 <% end %>

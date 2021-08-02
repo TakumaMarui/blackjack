@@ -50,6 +50,6 @@
   transition: 0.4s ease;
 }
 .button:hover{
-  color: #fff;
-  background: black;
+  color: black;
+  background: lightgray;
 }
