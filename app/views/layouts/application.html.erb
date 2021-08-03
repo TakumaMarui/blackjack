@@ -26,7 +26,7 @@
               <%= link_to current_user.nickname, user_path(current_user.id), class: :nav__btn %>
               <%= link_to "ランキング", users_path, class: :nav__btn %>
               <div class="nav_coin">
-                🪙<%= current_user.coin %>
+                🪙 <%= current_user.coin %>
               </div>
             </div>
           <% else %>

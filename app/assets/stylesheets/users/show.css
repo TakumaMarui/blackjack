@@ -9,6 +9,7 @@
   margin-bottom: 10px;
   border-radius: 6px;
   font-size: 25px;
+  font-weight: 900;
 }
 .user__image{
   border-radius: 50%;
@@ -24,21 +25,54 @@
   padding: 10px;
   border-radius: 6px;
   font-size: 20px;
+  font-weight: 900;
+}
+.profile{
+  border-bottom: dashed 2px #744d30
 }
 .user__manage{
   text-align: center;
   margin-top: calc(100vh - 600px);
 }
 .user__btn{
-  padding: 10px;
+  padding: 10px 20px;
   color: #fff;
-  background-color: #eb6100;
-  border-bottom: 5px solid #b84c00;
+  background:
+    repeating-radial-gradient(
+      circle at -1000% 0%,
+      rgba(116, 77, 48, 0.7),
+      #573216 7.5%,
+      rgba(116, 77, 48, 0.9) 10%
+    ),
+    repeating-radial-gradient(
+      circle at -10% 500%,
+      #573216,
+      #573216 0.1%,
+      #744d30 0.4%,
+      #744d30 0.5%
+    );
+  border-top: 2px solid #776f69;
+  border-left: 2px solid #776f69;
+  border-right: 2px solid #361f0d;
+  border-bottom: 5px solid #462811;
   border-radius: 4px;
 }
 .user__btn:hover {
   vertical-align: -3px;
   color: #fff;
-  background: #f56500;
-  border-bottom: 2px solid #b84c00;
+  background:
+    repeating-radial-gradient(
+      circle at -1000% 0%,
+      rgba(116, 77, 48, 0.7),
+      #573216 7.5%,
+      rgba(116, 77, 48, 0.9) 10%
+    ),
+    repeating-radial-gradient(
+      circle at -10% 500%,
+      #573216,
+      #573216 0.1%,
+      #744d30 0.4%,
+      #744d30 0.5%
+    );
+  border-bottom: 2px solid #462811;
 }

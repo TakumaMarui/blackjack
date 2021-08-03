@@ -80,8 +80,9 @@ a {
 }
 .nav_coin {
   display: inline-block;
-  padding: 0.1em 1em;
-  font-size: 0.9em;
+  padding: 0 1em;
+  font-family: 'Economica', sans-serif;
+  font-size: 1.2em;
   font-weight: bold;
   color: black;
   text-decoration: none;
@@ -118,6 +119,7 @@ a {
 }
 .nav__btn{
   padding: 0.3em 1em;
+  font-family: "Mplus 1p";
   font-size: 0.9em;
   font-weight: bold;
   color: black;
@@ -167,9 +169,22 @@ a {
   color: #fff;
   text-decoration: none;
   user-select: none;
-  background: black;
-  border: 1px black solid;
-  border-radius: 3px;
+  background:
+    repeating-radial-gradient(
+      circle at -1000% 0%,
+      rgba(116, 77, 48, 0.7),
+      #573216 7.5%,
+      rgba(116, 77, 48, 0.9) 10%
+    ),
+    repeating-radial-gradient(
+      circle at -10% 500%,
+      #573216,
+      #573216 0.1%,
+      #744d30 0.4%,
+      #744d30 0.5%
+    );
+  border-bottom: 5px solid #462811;
+  border-radius: 4px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
 }
@@ -209,6 +224,9 @@ a {
 
 .field {
   color: #fff;
+}
+.red {
+  color: red
 }
 
 /* タブレット対応 */

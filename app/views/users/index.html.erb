@@ -5,9 +5,9 @@
         <td class="list_td list_number"><%= i %></td>
         <td class="list_td list_image">
           <% if user.image.attached? %>
-            <%= image_tag user.image, class: :image %>
+            <%= link_to image_tag(user.image, class: :image), user_path(user.id) %>
           <% else %>
-            <%= image_tag ("default.png"), class: :image %>
+            <%= link_to image_tag(("default.png"), class: :image), user_path(user.id)%>
           <% end %>
         </td>
         <td class="list_td list_nickname"><%= link_to user.nickname, user_path(user.id), class: :nickname %></td>

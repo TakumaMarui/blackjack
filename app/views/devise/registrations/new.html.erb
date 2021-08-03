@@ -6,32 +6,32 @@
         <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
         <div class="field">
-          <%= f.label :nickname, "ユーザー名" %><br />
+          <%= f.label :nickname, "ユーザー名" %><a class="red"> *</a><br />
           <%= f.text_field :nickname, id:"user_nickname" %>
         </div>
 
         <div class="field">
-          <%= f.label :image, "画像" %><br />
+          <%= f.label :image, "画像（後から変更が可能です）" %><br />
           <%= f.file_field :image, id:"user_image" %>
         </div>
 
         <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.label :email, "メールアドレス" %><a class="red"> *</a><br />
           <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
         </div>
 
         <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）※英字と数字の両方を含めて設定してください" %><br />
+          <%= f.label :password, "パスワード" %><a class="red"> *</a>（6文字以上）※英字と数字の両方を含めて設定してください<br />
           <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation, "パスワード再入力" %><br />
+          <%= f.label :password_confirmation, "パスワード再入力" %><a class="red"> *</a><br />
           <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
         </div>
 
         <div class="field">
-          <%= f.label :profile, "プロフィール" %><br />
+          <%= f.label :profile, "プロフィール（後から変更が可能です）" %><br />
           <%= f.text_area :profile, class: :form__text, id:"user_profile" %>
         </div>
         
