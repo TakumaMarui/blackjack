@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rules/index'
   get 'profiles/index'
   devise_for :users
   get 'games/index'
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
       get 'update_coin'
     end
   end
+  resources :rules, only: :index
 end

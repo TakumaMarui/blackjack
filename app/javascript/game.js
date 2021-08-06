@@ -434,6 +434,7 @@ function showResult(result) {
         },
       });
       location.reload();
+      location.reload();
       break;
     case "loose":
       message = "LOOSE!";
@@ -453,6 +454,7 @@ function showResult(result) {
         },
       });
       location.reload();
+      location.reload();
       break;
     case "blackjack":
       message = "BLACKJACK!";
@@ -470,6 +472,8 @@ function showResult(result) {
           coin: newCoinBlackjack,
         },
       });
+      location.reload();
+      location.reload();
       location.reload();
       break;
     case "doubleWin":
@@ -489,6 +493,7 @@ function showResult(result) {
         },
       });
       location.reload();
+      location.reload();
       break;
     case "doubleLoose":
       message = "LOOSE!";
@@ -506,6 +511,7 @@ function showResult(result) {
           coin: newCoinDoubleLoose,
         },
       });
+      location.reload();
       location.reload();
       break;
   }

@@ -40,7 +40,9 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <p></p>
+      <div class="nav_rule">
+        <%= link_to "ルール", rules_path, class: :nav__btn %>
+      </div>
     </footer>
   </body>
 </html>

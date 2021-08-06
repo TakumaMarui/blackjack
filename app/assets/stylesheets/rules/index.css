@@ -1,0 +1,55 @@
+.rule{
+  width: 700px;
+  height: calc(100vh - 300px);
+  overflow-y:scroll;
+  background-color: rgb(250, 250, 233);
+  color: black;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+ol {
+  counter-reset:number;
+  list-style-type: none;
+  padding:0.5em;
+}
+ol li {
+  position: relative;
+  padding-left: 30px;
+  line-height: 1.5em;
+  padding: 0.5em 0.5em 0.5em 30px;
+}
+
+ol li:before{
+  position: absolute;
+  counter-increment: number;
+  content: counter(number);
+  display:inline-block;
+  background: #eec409;
+  color: white;
+  font-family: 'Avenir','Arial Black','Arial',sans-serif;
+  font-weight:bold;
+  font-size: 15px;
+  border-radius: 50%;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.rule_table{
+  border: 1px solid black;
+  border-radius: 4px;
+  border-spacing: 0;
+}
+.rule_table th{
+  border-bottom: 1px solid black;
+}
+.rule_table th, td{
+  padding: 10px;
+}
