@@ -2,12 +2,17 @@
   width: 700px;
   height: calc(100vh - 300px);
   overflow-y:scroll;
-  background-color: rgb(250, 250, 233);
   color: black;
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
   border-radius: 6px;
+  background: radial-gradient(1.5em 6.28571em at 1.95em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(1.5em 6.28571em at -0.45em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 1.5em 5.5em, radial-gradient(2.3em 4.57143em at 2.99em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(2.3em 4.57143em at -0.69em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 2.3em 4em, radial-gradient(3.5em 6.28571em at 4.55em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(3.5em 6.28571em at -1.05em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 3.5em 5.5em, radial-gradient(rgb(228, 228, 213), rgb(207, 207, 200));
+  background-color: rgb(250, 250, 233);
+  background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%;
+  background-repeat: repeat;
+  border: 3px solid #744d30;
+  box-shadow: 0 0 5px 1px #c0c0c0;
 }
 
 ol {
@@ -27,7 +32,7 @@ ol li:before{
   counter-increment: number;
   content: counter(number);
   display:inline-block;
-  background: #eec409;
+  background: #744d30;
   color: white;
   font-family: 'Avenir','Arial Black','Arial',sans-serif;
   font-weight:bold;
@@ -47,9 +52,12 @@ ol li:before{
   border-radius: 4px;
   border-spacing: 0;
 }
-.rule_table th{
+.rule_th{
   border-bottom: 1px solid black;
 }
-.rule_table th, td{
+.rule_th{
+  padding: 10px;
+}
+.rule_td{
   padding: 10px;
 }
