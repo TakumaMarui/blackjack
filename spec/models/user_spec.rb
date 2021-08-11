@@ -9,6 +9,14 @@ RSpec.describe User, type: :model do
       it "全ての値が正しく入力されていると保存できること" do
         expect(@user).to be_valid
       end
+      it "profileが空でも保存できること" do
+        @user.profile = ''
+        expect(@user).to be_valid
+      end
+      it "imageが空でも保存できること" do
+        @user.image = nil
+        expect(@user).to be_valid
+      end
     end
     context "新規登録ができないとき" do
       it "nicknameが空だと保存できないこと" do
