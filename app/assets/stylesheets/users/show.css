@@ -1,0 +1,89 @@
+.user_container{
+  display: flex;
+  justify-content: center;
+}
+.user_nickname{
+  border: 3px solid #744d30;
+  color: black;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-size: 25px;
+  font-weight: 900;
+  background: radial-gradient(1.5em 6.28571em at 1.95em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(1.5em 6.28571em at -0.45em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 1.5em 5.5em, radial-gradient(2.3em 4.57143em at 2.99em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(2.3em 4.57143em at -0.69em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 2.3em 4em, radial-gradient(3.5em 6.28571em at 4.55em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(3.5em 6.28571em at -1.05em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 3.5em 5.5em, radial-gradient(rgb(228, 228, 213), rgb(207, 207, 200));
+  background-color: rgb(250, 250, 233);
+  background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%;
+  background-repeat: repeat;
+  box-shadow: 0 0 5px 1px #c0c0c0;
+}
+.user__image{
+  border: 3px solid #744d30;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 0 0 5px 1px #c0c0c0;
+}
+.user_profile{
+  width: 500px;
+  border: 3px solid #744d30;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: 900;
+  background: radial-gradient(1.5em 6.28571em at 1.95em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(1.5em 6.28571em at -0.45em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 1.5em 5.5em, radial-gradient(2.3em 4.57143em at 2.99em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(2.3em 4.57143em at -0.69em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 2.3em 4em, radial-gradient(3.5em 6.28571em at 4.55em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(3.5em 6.28571em at -1.05em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 3.5em 5.5em, radial-gradient(rgb(228, 228, 213), rgb(207, 207, 200));
+  background-color: rgb(250, 250, 233);
+  background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%;
+  background-repeat: repeat;
+  box-shadow: 0 0 5px 1px #c0c0c0;
+}
+.profile{
+  border-bottom: dashed 2px #744d30
+}
+.user__manage{
+  text-align: center;
+  margin-top: calc(100vh - 600px);
+}
+.user__btn{
+  padding: 10px 20px;
+  color: #fff;
+  background:
+    repeating-radial-gradient(
+      circle at -1000% 0%,
+      rgba(116, 77, 48, 0.7),
+      #573216 7.5%,
+      rgba(116, 77, 48, 0.9) 10%
+    ),
+    repeating-radial-gradient(
+      circle at -10% 500%,
+      #573216,
+      #573216 0.1%,
+      #744d30 0.4%,
+      #744d30 0.5%
+    );
+  border-top: 2px solid #776f69;
+  border-left: 2px solid #776f69;
+  border-right: 2px solid #361f0d;
+  border-bottom: 5px solid #462811;
+  border-radius: 4px;
+}
+.user__btn:hover {
+  vertical-align: -3px;
+  color: #fff;
+  background:
+    repeating-radial-gradient(
+      circle at -1000% 0%,
+      rgba(116, 77, 48, 0.7),
+      #573216 7.5%,
+      rgba(116, 77, 48, 0.9) 10%
+    ),
+    repeating-radial-gradient(
+      circle at -10% 500%,
+      #573216,
+      #573216 0.1%,
+      #744d30 0.4%,
+      #744d30 0.5%
+    );
+  border-bottom: 2px solid #462811;
+}

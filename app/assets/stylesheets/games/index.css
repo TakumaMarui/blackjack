@@ -53,3 +53,317 @@
   color: black;
   background: lightgray;
 }
+
+.trump {
+	margin: auto;
+	position: relative;
+}
+.trump img {
+	width: 100%;
+	animation-name: trump;
+	-webkit-animation-name: trump;
+	animation-duration: 10s;
+	-webkit-animation-duration: 10s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
+	opacity: 0;
+}
+.trump .img1 {
+	display: block;
+	margin: 0 auto;
+}
+.trump .img2 {
+	animation-delay:5s;
+	-webkit-animation-delay:5s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img3 {
+	animation-delay:0.2s;
+	-webkit-animation-delay:0.2s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img4 {
+	animation-delay:5.2s;
+	-webkit-animation-delay:5.2s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img5 {
+	animation-delay:0.4s;
+	-webkit-animation-delay:0.4s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img6 {
+	animation-delay:5.4s;
+	-webkit-animation-delay:5.4s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img7 {
+	animation-delay:0.6s;
+	-webkit-animation-delay:0.6s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img8 {
+	animation-delay:5.6s;
+	-webkit-animation-delay:5.6s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img9 {
+	animation-delay:0.8s;
+	-webkit-animation-delay:0.8s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img10 {
+	animation-delay:5.8s;
+	-webkit-animation-delay:5.8s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img11 {
+	animation-delay:1s;
+	-webkit-animation-delay:1s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img12 {
+	animation-delay:6s;
+	-webkit-animation-delay:6s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img13 {
+	animation-delay:1.2s;
+	-webkit-animation-delay:1.2s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img14 {
+	animation-delay:6.2s;
+	-webkit-animation-delay:6.2s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img15 {
+	animation-delay:1.4s;
+	-webkit-animation-delay:1.4s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img16 {
+	animation-delay:6.4s;
+	-webkit-animation-delay:6.4s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img17 {
+	animation-delay:1.6s;
+	-webkit-animation-delay:1.6s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img18 {
+	animation-delay:6.6s;
+	-webkit-animation-delay:6.6s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img19 {
+	animation-delay:1.8s;
+	-webkit-animation-delay:1.8s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img20 {
+	animation-delay:6.8s;
+	-webkit-animation-delay:6.8s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img21 {
+	animation-delay:2s;
+	-webkit-animation-delay:2s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img22 {
+	animation-delay:7s;
+	-webkit-animation-delay:7s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img23 {
+	animation-delay:2.2s;
+	-webkit-animation-delay:2.2s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img24 {
+	animation-delay:7.2s;
+	-webkit-animation-delay:7.2s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img25 {
+	animation-delay:2.4s;
+	-webkit-animation-delay:2.4s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img26 {
+	animation-delay:7.4s;
+	-webkit-animation-delay:7.4s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img27 {
+	animation-delay:2.6s;
+	-webkit-animation-delay:2.6s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img28 {
+	animation-delay:7.6s;
+	-webkit-animation-delay:7.6s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img29 {
+	animation-delay:2.8s;
+	-webkit-animation-delay:2.8s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img30 {
+	animation-delay:7.8s;
+	-webkit-animation-delay:7.8s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img31 {
+	animation-delay:3s;
+	-webkit-animation-delay:3s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img32 {
+	animation-delay:8s;
+	-webkit-animation-delay:8s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img33 {
+	animation-delay:3.2s;
+	-webkit-animation-delay:3.2s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img34 {
+	animation-delay:8.2s;
+	-webkit-animation-delay:8.2s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img35 {
+	animation-delay:3.4s;
+	-webkit-animation-delay:3.4s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img36 {
+	animation-delay:8.4s;
+	-webkit-animation-delay:8.4s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img37 {
+	animation-delay:3.6s;
+	-webkit-animation-delay:3.6s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img38 {
+	animation-delay:8.6s;
+	-webkit-animation-delay:8.6s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img39 {
+	animation-delay:3.8s;
+	-webkit-animation-delay:3.8s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img40 {
+	animation-delay:8.8s;
+	-webkit-animation-delay:8.8s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.trump .img41 {
+	animation-delay:4s;
+	-webkit-animation-delay:4s;
+	display: block;
+	margin: 0 auto;
+}
+.trump .img42 {
+	animation-delay:9s;
+	-webkit-animation-delay:9s;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+@keyframes trump {
+	0% {
+		opacity: 0;
+	}
+	12.5% {
+		opacity: 1;
+	}
+	37.5% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+@-webkit-keyframes trump {
+	0% {
+		opacity: 0;
+	}
+	12.5% {
+		opacity: 1;
+	}
+	37.5% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}

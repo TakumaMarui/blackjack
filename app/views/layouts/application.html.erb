@@ -6,6 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Economica:700" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
@@ -24,7 +26,7 @@
               <%= link_to current_user.nickname, user_path(current_user.id), class: :nav__btn %>
               <%= link_to "ランキング", users_path, class: :nav__btn %>
               <div class="nav_coin">
-                🪙<%= current_user.coin %>
+                🪙 <%= current_user.coin %>
               </div>
             </div>
           <% else %>
@@ -38,7 +40,9 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <p></p>
+      <div class="nav_rule">
+        <%= link_to "ルール", rules_path, class: :nav__btn %>
+      </div>
     </footer>
   </body>
 </html>
